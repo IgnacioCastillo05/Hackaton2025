@@ -1,5 +1,7 @@
 package edu.dosw.lab.Pixel_Scribe.security;
 
+import org.springframework.boot.context.properties.ConfigurationProperties;
+
 /**
  * Propiedades de configuración para JWT (JSON Web Token).
  * 
@@ -22,8 +24,6 @@ package edu.dosw.lab.Pixel_Scribe.security;
  * 
  * @see JwtTokenService
  */
-@Getter
-@Setter
 @ConfigurationProperties(prefix = "pixelscribe.security.jwt")
 public class JwtProperties {
 
@@ -44,4 +44,28 @@ public class JwtProperties {
      * DEBE configurarse mediante variable de entorno por seguridad.
      */
     private String secret;
+
+    public String getIssuer() {
+        return issuer;
+    }
+
+    public void setIssuer(String issuer) {
+        this.issuer = issuer;
+    }
+
+    public int getExpirationMinutes() {
+        return expirationMinutes;
+    }
+
+    public void setExpirationMinutes(int expirationMinutes) {
+        this.expirationMinutes = expirationMinutes;
+    }
+
+    public String getSecret() {
+        return secret;
+    }
+
+    public void setSecret(String secret) {
+        this.secret = secret;
+    }
 }

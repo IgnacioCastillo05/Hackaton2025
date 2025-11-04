@@ -1,15 +1,15 @@
 package edu.dosw.lab.Pixel_Scribe.Service;
 
 
-import edu.dosw.lab.pixelscribe.dto.AIAnalysisResponse;
-import edu.dosw.lab.pixelscribe.dto.ImageListItemDTO;
-import edu.dosw.lab.pixelscribe.dto.ImageListResponse;
-import edu.dosw.lab.pixelscribe.dto.ImageUploadResponse;
-import edu.dosw.lab.pixelscribe.exception.FileProcessingException;
-import edu.dosw.lab.pixelscribe.exception.ResourceNotFoundException;
-import edu.dosw.lab.pixelscribe.model.Image;
-import edu.dosw.lab.pixelscribe.model.User;
-import edu.dosw.lab.pixelscribe.repository.ImageRepository;
+import edu.dosw.lab.Pixel_Scribe.dto.AIAnalysisResponse;
+import edu.dosw.lab.Pixel_Scribe.dto.ImageListItemDTO;
+import edu.dosw.lab.Pixel_Scribe.dto.ImageListResponse;
+import edu.dosw.lab.Pixel_Scribe.dto.ImageUploadResponse;
+import edu.dosw.lab.Pixel_Scribe.Exceptions.FileProcessingException;
+import edu.dosw.lab.Pixel_Scribe.Exceptions.ResourceNotFoundException;
+import edu.dosw.lab.Pixel_Scribe.model.Image;
+import edu.dosw.lab.Pixel_Scribe.model.User;
+import edu.dosw.lab.Pixel_Scribe.Repository.ImageRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -112,7 +112,6 @@ public class ImageService {
             image.getTitle(),
             image.getImageUrl(),
             image.getDescription(),
-            image.getAnalyzedAt(),
             image.getCreatedAt()
         );
     }
@@ -134,9 +133,9 @@ public class ImageService {
                 img.getId(),
                 img.getTitle(),
                 img.getImageUrl(),
+                null, // thumbnailUrl - no implementado aún
                 img.getDescription(),
-                img.getCreatedAt(),
-                img.getAnalyzedAt()
+                img.getCreatedAt()
             ))
             .collect(Collectors.toList());
 
@@ -263,3 +262,5 @@ public class ImageService {
         }
     }
 }
+
+

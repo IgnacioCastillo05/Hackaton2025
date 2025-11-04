@@ -27,3 +27,6 @@ public record ImageResponse(UUID id,
                 metadata.getDescription());
     }
 }
+
+
+

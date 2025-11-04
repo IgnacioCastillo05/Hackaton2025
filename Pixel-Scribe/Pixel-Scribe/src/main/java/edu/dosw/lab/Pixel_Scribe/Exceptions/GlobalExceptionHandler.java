@@ -1,6 +1,6 @@
 package edu.dosw.lab.Pixel_Scribe.Exceptions;
 
-import edu.dosw.lab.pixelscribe.dto.ErrorResponse;
+import edu.dosw.lab.Pixel_Scribe.dto.ErrorResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -119,3 +119,6 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(error);
     }
 }
+
+
+

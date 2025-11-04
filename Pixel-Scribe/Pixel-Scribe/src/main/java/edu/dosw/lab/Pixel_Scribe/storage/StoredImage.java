@@ -9,3 +9,6 @@ public record StoredImage(String objectKey,
                           String originalFilename,
                           String publicUrl) {
 }
+
+
+

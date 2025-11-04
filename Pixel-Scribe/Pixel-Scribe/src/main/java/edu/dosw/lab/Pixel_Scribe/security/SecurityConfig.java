@@ -41,6 +41,9 @@ return Clock.systemDefaultZone();
 public SecurityFilterChain securityFilterChain(HttpSecurity http, JwtAuthFilter jwtAuthFilter) throws Exception {
 http
 .csrf(csrf -> csrf.disable())
+.headers(headers -> headers
+.frameOptions(frameOptions -> frameOptions.sameOrigin()) // Permitir frames para H2 Console
+)
 .authorizeHttpRequests(auth -> auth
 .requestMatchers(
 "/",
@@ -55,7 +58,8 @@ http
 "/actuator/**",
 "/v3/api-docs/**",
 "/swagger-ui/**",
-"/swagger-ui.html")
+"/swagger-ui.html",
+"/h2-console/**") // Agregar H2 Console
 .permitAll()
 .anyRequest()
 .authenticated())
@@ -87,3 +91,6 @@ UserDetails user = User.builder()
 return username -> user;
 }
 }
+
+
+

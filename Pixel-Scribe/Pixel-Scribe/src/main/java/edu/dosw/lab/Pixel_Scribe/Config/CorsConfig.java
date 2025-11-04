@@ -29,12 +29,23 @@ public class CorsConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/api/**")
-                        .allowedOrigins(allowedOrigins)
+                        .allowedOriginPatterns("*") // ✅ Permite cualquier origen con allowCredentials
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*")
                         .allowCredentials(true)
+                        .maxAge(3600);
+                
+                // También permitir endpoints públicos (actuator, h2-console, swagger)
+                registry.addMapping("/**")
+                        .allowedOriginPatterns("*")
+                        .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
+                        .allowedHeaders("*")
+                        .allowCredentials(false) // ✅ Sin credentials para rutas públicas
                         .maxAge(3600);
             }
         };
     }
 }
+
+
+

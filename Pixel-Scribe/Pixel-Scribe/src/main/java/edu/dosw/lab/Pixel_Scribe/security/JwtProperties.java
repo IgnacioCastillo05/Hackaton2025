@@ -69,3 +69,6 @@ public class JwtProperties {
         this.secret = secret;
     }
 }
+
+
+

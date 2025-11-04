@@ -8,3 +8,6 @@ import jakarta.validation.constraints.NotBlank;
 public record ImageDescriptionRequest(@NotBlank String imageKey,
                                       @NotBlank String description) {
 }
+
+
+

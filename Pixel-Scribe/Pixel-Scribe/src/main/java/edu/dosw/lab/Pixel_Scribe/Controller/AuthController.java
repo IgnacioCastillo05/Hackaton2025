@@ -1,10 +1,10 @@
 package edu.dosw.lab.Pixel_Scribe.Controller;
 
 
-import edu.dosw.lab.pixelscribe.dto.AuthResponse;
-import edu.dosw.lab.pixelscribe.dto.LoginRequest;
-import edu.dosw.lab.pixelscribe.dto.RegisterRequest;
-import edu.dosw.lab.pixelscribe.service.AuthService;
+import edu.dosw.lab.Pixel_Scribe.dto.AuthResponse;
+import edu.dosw.lab.Pixel_Scribe.dto.LoginRequest;
+import edu.dosw.lab.Pixel_Scribe.dto.RegisterRequest;
+import edu.dosw.lab.Pixel_Scribe.Service.AuthService;
 import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -85,3 +85,6 @@ public class AuthController {
         return ResponseEntity.ok("Auth service is running");
     }
 }
+
+
+

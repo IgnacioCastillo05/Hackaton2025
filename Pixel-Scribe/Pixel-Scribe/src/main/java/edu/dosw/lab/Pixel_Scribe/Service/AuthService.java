@@ -1,16 +1,16 @@
 package edu.dosw.lab.Pixel_Scribe.Service;
 
-import edu.dosw.lab.pixelscribe.dto.AuthResponse;
-import edu.dosw.lab.pixelscribe.dto.LoginRequest;
-import edu.dosw.lab.pixelscribe.dto.RegisterRequest;
-import edu.dosw.lab.pixelscribe.dto.UserInfoDTO;
-import edu.dosw.lab.pixelscribe.exception.InvalidCredentialsException;
-import edu.dosw.lab.pixelscribe.exception.ResourceAlreadyExistsException;
-import edu.dosw.lab.pixelscribe.model.Role;
-import edu.dosw.lab.pixelscribe.model.User;
-import edu.dosw.lab.pixelscribe.repository.UserRepository;
-import edu.dosw.lab.pixelscribe.security.JwtProperties;
-import edu.dosw.lab.pixelscribe.security.JwtTokenService;
+import edu.dosw.lab.Pixel_Scribe.dto.AuthResponse;
+import edu.dosw.lab.Pixel_Scribe.dto.LoginRequest;
+import edu.dosw.lab.Pixel_Scribe.dto.RegisterRequest;
+import edu.dosw.lab.Pixel_Scribe.dto.UserInfoDTO;
+import edu.dosw.lab.Pixel_Scribe.Exceptions.InvalidCredentialsException;
+import edu.dosw.lab.Pixel_Scribe.Exceptions.ResourceAlreadyExistsException;
+import edu.dosw.lab.Pixel_Scribe.model.Role;
+import edu.dosw.lab.Pixel_Scribe.model.User;
+import edu.dosw.lab.Pixel_Scribe.Repository.UserRepository;
+import edu.dosw.lab.Pixel_Scribe.security.JwtProperties;
+import edu.dosw.lab.Pixel_Scribe.security.JwtTokenService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -136,3 +136,6 @@ public class AuthService {
         return new AuthResponse(token, expiresIn, userInfo);
     }
 }
+
+
+
